@@ -1,5 +1,5 @@
-TF_CFLAGS := $(python3 -c 'import tensorflow as tf; print(" ".join(tf.sysconfig.get_compile_flags()))' 2> /dev/null)
-TF_LFLAGS := $(python3 -c 'import tensorflow as tf; print(" ".join(tf.sysconfig.get_link_flags()))' 2> /dev/null)
+TF_CFLAGS := `python3 -c 'import tensorflow as tf; print(" ".join(tf.sysconfig.get_compile_flags()))' 2> /dev/null`
+TF_LFLAGS := `python3 -c 'import tensorflow as tf; print(" ".join(tf.sysconfig.get_link_flags()))' 2> /dev/null`
 
 ALLIBS := $(patsubst %_module.cc, %.so, $(wildcard *_module.cc))
 
